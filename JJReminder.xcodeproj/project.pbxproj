@@ -13,6 +13,7 @@
 		4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */; };
 		4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD22037276E00AF55D8 /* Assets.xcassets */; };
 		4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD42037276E00AF55D8 /* LaunchScreen.storyboard */; };
+		4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4A900DD22037276E00AF55D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A900DD52037276E00AF55D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A900DD72037276E00AF55D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				4A900DC82037276E00AF55D8 /* AppDelegate.swift */,
 				4A900DCA2037276E00AF55D8 /* ViewController.swift */,
+				4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */,
 				4A900DCC2037276E00AF55D8 /* Main.storyboard */,
 				4A900DD22037276E00AF55D8 /* Assets.xcassets */,
 				4A900DD42037276E00AF55D8 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				4A900DCB2037276E00AF55D8 /* ViewController.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
+				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

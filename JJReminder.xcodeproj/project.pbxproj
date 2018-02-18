@@ -14,6 +14,8 @@
 		4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD22037276E00AF55D8 /* Assets.xcassets */; };
 		4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD42037276E00AF55D8 /* LaunchScreen.storyboard */; };
 		4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */; };
+		E12EEAED2039BE06007D19B5 /* JJDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12EEAEB2039BE06007D19B5 /* JJDetailsViewController.swift */; };
+		E12EEAEE2039BE06007D19B5 /* JJDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAEC2039BE06007D19B5 /* JJDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4A900DD52037276E00AF55D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A900DD72037276E00AF55D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPMainViewController.swift; sourceTree = "<group>"; };
+		E12EEAEB2039BE06007D19B5 /* JJDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJDetailsViewController.swift; sourceTree = "<group>"; };
+		E12EEAEC2039BE06007D19B5 /* JJDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		4A900DC72037276D00AF55D8 /* JJReminder */ = {
 			isa = PBXGroup;
 			children = (
+				E12EEAE72039BD03007D19B5 /* Detail */,
 				4A900DC82037276E00AF55D8 /* AppDelegate.swift */,
 				4A900DCA2037276E00AF55D8 /* ViewController.swift */,
 				4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */,
@@ -68,6 +73,39 @@
 				4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */,
 			);
 			path = JJReminder;
+			sourceTree = "<group>";
+		};
+		E12EEAE72039BD03007D19B5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E12EEAEA2039BD53007D19B5 /* Models */,
+				E12EEAE92039BD4D007D19B5 /* Views */,
+				E12EEAE82039BD44007D19B5 /* Controllers */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E12EEAE82039BD44007D19B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E12EEAEB2039BE06007D19B5 /* JJDetailsViewController.swift */,
+				E12EEAEC2039BE06007D19B5 /* JJDetailsViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E12EEAE92039BD4D007D19B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E12EEAEA2039BD53007D19B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +134,7 @@
 		4A900DBD2037276D00AF55D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JJ;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = jjproject;
@@ -130,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */,
+				E12EEAEE2039BE06007D19B5 /* JJDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12EEAED2039BE06007D19B5 /* JJDetailsViewController.swift in Sources */,
 				4A900DCB2037276E00AF55D8 /* ViewController.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
@@ -283,7 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GPQ9HFNRJ2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;
@@ -298,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GPQ9HFNRJ2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;

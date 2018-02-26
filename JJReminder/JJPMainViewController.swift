@@ -24,8 +24,10 @@ class JJPMainViewController: UIViewController {
     }
     
     @objc func showDetails() {
+        
         let vc = JJDetailsViewController()
-        present(vc, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: vc)
+        present(navigationController, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

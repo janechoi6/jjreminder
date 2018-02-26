@@ -15,9 +15,22 @@ class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupNavigationBar()
     }
 
+    func setupNavigationBar() -> Void {
+        // title
+        navigationItem.title = NSLocalizedString("details", comment: "")
+        
+        // left Item(SystemItem)
+        let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(touchUpInsideLeftBarButtonItem(_:)))
+        navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
+        
+        // right Item(title & UIBarButtonItemStyle)
+        let rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("done", comment: ""), style: UIBarButtonItemStyle.done, target: self, action: #selector(touchUpInsideRightBarButtonItem(_:)))
+        navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,14 +61,16 @@ class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Action
+    
+    @objc func touchUpInsideLeftBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+    @objc func touchUpInsideRightBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
+        print("click - right")
+    }
+
 
 }

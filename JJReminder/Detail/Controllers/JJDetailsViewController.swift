@@ -12,10 +12,37 @@ class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    // tableDataSource
+    var tableViewMap: [[String]] {
+        return [
+            //section 0 - title / description
+            [
+                "title",
+                "desctiption",
+                "status"
+            ],
+            // section 1 - alaram
+            [
+                "is_alarm",
+                "alaram"
+            ],
+            // section 2 - option
+            [
+                "priority",
+                "list"
+            ],
+            // section 3 - delete
+            [
+                "delete"
+            ]
+        ]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupViews()
     }
 
     func setupNavigationBar() -> Void {
@@ -31,6 +58,10 @@ class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableV
         navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
     }
     
+    func setupViews() -> Void {
+    
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,11 +71,17 @@ class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return tableViewMap.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        if section != 1 {
+            return tableViewMap[section].count
+        } else {
+            // yjm. 알람 여부에 따라 반환값 다름(알람 x -> 1 / 알람 o -> map.count)
+//            return 1
+            return tableViewMap[section].count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

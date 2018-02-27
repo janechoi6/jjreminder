@@ -1,5 +1,5 @@
 //
-//  JJDetailsViewController.swift
+//  JJPDetailsViewController.swift
 //  JJReminder
 //
 //  Created by JiminYoo on 2018. 2. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JJDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     

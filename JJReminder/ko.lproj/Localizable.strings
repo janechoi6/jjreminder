@@ -1,0 +1,9 @@
+/* 
+  localizable.strings
+  JJReminder
+
+  Created by JiminYoo on 2018. 2. 26..
+  Copyright © 2018년 jjproject. All rights reserved.
+*/
+"details" = "세부사항";
+"done" = "완료!";

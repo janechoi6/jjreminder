@@ -14,6 +14,8 @@ class JJPMainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+          perform(#selector(showDetails), with: nil, afterDelay: 2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +23,12 @@ class JJPMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @objc func showDetails() {
+        
+        let vc = JJDetailsViewController()
+        let navigationController = UINavigationController(rootViewController: vc)
+        present(navigationController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

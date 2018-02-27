@@ -69,11 +69,11 @@
 		4A900DC72037276D00AF55D8 /* JJReminder */ = {
 			isa = PBXGroup;
 			children = (
-				4A900DD72037276E00AF55D8 /* Info.plist */,
-				4ADB7B4620459412000E5882 /* Resources */,
-				4ADB7B432045937A000E5882 /* Common */,
-				4ADB7B422045936D000E5882 /* ItemList */,
 				E12EEAE72039BD03007D19B5 /* Detail */,
+				4ADB7B422045936D000E5882 /* ItemList */,
+				4ADB7B432045937A000E5882 /* Common */,
+				4ADB7B4620459412000E5882 /* Resources */,
+				4A900DD72037276E00AF55D8 /* Info.plist */,
 			);
 			path = JJReminder;
 			sourceTree = "<group>";

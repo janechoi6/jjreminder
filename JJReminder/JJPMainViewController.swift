@@ -16,8 +16,6 @@ class JJPMainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
         setup()
     }
 
@@ -70,4 +68,6 @@ extension JJPMainViewController: UICollectionViewDelegate {
 //        perform(#selector(showDetails), with: nil, afterDelay: 2)
         perform(#selector(showDetails))
     }
+    
+
 }

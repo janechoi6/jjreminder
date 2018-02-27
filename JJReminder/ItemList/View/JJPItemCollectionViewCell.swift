@@ -13,6 +13,7 @@ class JJPItemCollectionViewCell: UICollectionViewCell {
     static let nibName = "JJPItemCollectionViewCell"
     static let reuseIdentifier = "JJPItemCollectionViewCellReuseID"
     
+    @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

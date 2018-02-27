@@ -68,7 +68,7 @@ extension JJPMainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier, for: indexPath) as! JJPItemCollectionViewCell
-        
+        cell.titleLabel.text = "\(indexPath.item)"
         return cell
     }
     

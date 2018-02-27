@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */; };
+		4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */; };
 		4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DC82037276E00AF55D8 /* AppDelegate.swift */; };
 		4A900DCB2037276E00AF55D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DCA2037276E00AF55D8 /* ViewController.swift */; };
 		4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DCC2037276E00AF55D8 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A900DC52037276D00AF55D8 /* JJReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A900DC82037276E00AF55D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A900DCA2037276E00AF55D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				4A900DD72037276E00AF55D8 /* Info.plist */,
 				E1BC3E8820444E5000519CAF /* Localizable.strings */,
 				4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */,
+				4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */,
+				4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */,
 			);
 			path = JJReminder;
 			sourceTree = "<group>";
@@ -138,7 +144,7 @@
 		4A900DBD2037276D00AF55D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = JJ;
+				CLASSPREFIX = JJP;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = jjproject;
@@ -175,6 +181,7 @@
 			files = (
 				4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */,
 				E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */,
+				4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */,
 				E12EEAEE2039BE06007D19B5 /* JJDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
@@ -190,6 +197,7 @@
 			files = (
 				E12EEAED2039BE06007D19B5 /* JJDetailsViewController.swift in Sources */,
 				4A900DCB2037276E00AF55D8 /* ViewController.swift in Sources */,
+				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,

@@ -10,17 +10,25 @@ import UIKit
 
 class JJPMainViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-          perform(#selector(showDetails), with: nil, afterDelay: 2)
+        
+        setup()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setup() {
+        let nib = UINib(nibName: JJPItemCollectionViewCell.nibName, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier)
     }
     
     @objc func showDetails() {
@@ -39,4 +47,27 @@ class JJPMainViewController: UIViewController {
     }
     */
 
+}
+
+extension JJPMainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier, for: indexPath) as! JJPItemCollectionViewCell
+        
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+}
+
+extension JJPMainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        perform(#selector(showDetails), with: nil, afterDelay: 2)
+        perform(#selector(showDetails))
+    }
 }

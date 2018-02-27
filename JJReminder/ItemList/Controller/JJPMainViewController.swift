@@ -12,6 +12,9 @@ class JJPMainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    fileprivate var collectionViewCellSize = CGSize.zero
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +30,9 @@ class JJPMainViewController: UIViewController {
     func setup() {
         let nib = UINib(nibName: JJPItemCollectionViewCell.nibName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier)
+        
+        let length = CGFloat((ScreenUtils.screenWidth - totalSpacing) / CGFloat(numberOfItemsPerRow))
+        collectionViewCellSize =  CGSize(width: length, height: length)
     }
     
     @objc func showDetails() {
@@ -45,6 +51,13 @@ class JJPMainViewController: UIViewController {
     }
     */
 
+}
+
+extension JJPMainViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionViewCellSize
+    }
 }
 
 extension JJPMainViewController: UICollectionViewDataSource {

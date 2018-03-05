@@ -8,33 +8,40 @@
 
 import UIKit
 
+enum SectionType: Int {
+    case Title = 0
+    case Alarm
+    case Option
+    case Delete
+}
+
 class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     // tableDataSource
-    var tableViewMap: [[String]] {
+    var tableViewMap: [(SectionType.RawValue, [String])] {
         return [
             //section 0 - title / description
-            [
+            (SectionType.Title.rawValue, [
                 "title",
                 "desctiption",
                 "status"
-            ],
+            ]),
             // section 1 - alaram
-            [
+            (SectionType.Alarm.rawValue, [
                 "is_alarm",
                 "alaram"
-            ],
+            ]),
             // section 2 - option
-            [
+            (SectionType.Option.rawValue, [
                 "priority",
                 "list"
-            ],
+            ]),
             // section 3 - delete
-            [
+            (SectionType.Delete.rawValue, [
                 "delete"
-            ]
+            ])
         ]
     }
     
@@ -59,7 +66,9 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func setupViews() -> Void {
-    
+        JJPDetailsTitleCell.registerToTableView(tableView: tableView)
+        
+//        print("\(String(describing: tableViewMap.index(forKey: SectionType.Title)))")
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,17 +84,31 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section != 1 {
-            return tableViewMap[section].count
-        } else {
-            // yjm. 알람 여부에 따라 반환값 다름(알람 x -> 1 / 알람 o -> map.count)
-//            return 1
-            return tableViewMap[section].count
-        }
+//        if section != 1 {
+//            return 1//tableViewMap.index(forKey: section as! SectionType)
+//        } else {
+//            // yjm. 알람 여부에 따라 반환값 다름(알람 x -> 1 / 알람 o -> map.count)
+////            return 1
+//            return 1//1tableViewMap[section].count
+//        }
+//        if section == SectionType.Title.rawValue {
+//
+//        }
+        
+        let sectionInfo:(section: Int, rowInfo: [String]) = tableViewMap[section]
+        return sectionInfo.rowInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        if indexPath.section == SectionType.Title.rawValue {
+            if indexPath.row == 0 {
+                let cell: JJPDetailsTitleCell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
+                
+                return cell
+            }
+        }
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") {
             cell.textLabel?.text = "hi"
             

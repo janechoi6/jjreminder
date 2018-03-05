@@ -16,6 +16,11 @@
 		4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD42037276E00AF55D8 /* LaunchScreen.storyboard */; };
 		4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */; };
 		4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7B4820459456000E5882 /* ScreenUtils.swift */; };
+		B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408E4204D5C4600C456A9 /* JJPDetailsTitleCell.swift */; };
+		B4E408E7204D5C4600C456A9 /* JJPDetailsTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */; };
+		B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */; };
+		B4E408EC204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */; };
+		B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408EF204D732100C456A9 /* UITableViewCell+.swift */; };
 		E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */; };
 		E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */; };
 		E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1BC3E8820444E5000519CAF /* Localizable.strings */; };
@@ -33,6 +38,11 @@
 		4A900DD72037276E00AF55D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPMainViewController.swift; sourceTree = "<group>"; };
 		4ADB7B4820459456000E5882 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		B4E408E4204D5C4600C456A9 /* JJPDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsTitleCell.swift; sourceTree = "<group>"; };
+		B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsTitleCell.xib; sourceTree = "<group>"; };
+		B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsDescriptionCell.swift; sourceTree = "<group>"; };
+		B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsDescriptionCell.xib; sourceTree = "<group>"; };
+		B4E408EF204D732100C456A9 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsViewController.swift; sourceTree = "<group>"; };
 		E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsViewController.xib; sourceTree = "<group>"; };
 		E1BC3E8720444E5000519CAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -90,6 +100,7 @@
 		4ADB7B432045937A000E5882 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B4E408F1204D76E000C456A9 /* Extention */,
 				4ADB7B472045942F000E5882 /* Utils */,
 				4A900DC82037276E00AF55D8 /* AppDelegate.swift */,
 				4A900DCC2037276E00AF55D8 /* Main.storyboard */,
@@ -133,11 +144,29 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B4E408E8204D5C6000C456A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4E408E4204D5C4600C456A9 /* JJPDetailsTitleCell.swift */,
+				B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */,
+				B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */,
+				B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4E408F1204D76E000C456A9 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				B4E408EF204D732100C456A9 /* UITableViewCell+.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		E12EEAE72039BD03007D19B5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				E12EEAEA2039BD53007D19B5 /* Models */,
-				E12EEAE92039BD4D007D19B5 /* Views */,
+				B4E408E8204D5C6000C456A9 /* Views */,
 				E12EEAE82039BD44007D19B5 /* Controllers */,
 			);
 			path = Detail;
@@ -150,20 +179,6 @@
 				E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E12EEAE92039BD4D007D19B5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E12EEAEA2039BD53007D19B5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E408E7204D5C4600C456A9 /* JJPDetailsTitleCell.xib in Resources */,
 				4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */,
 				E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */,
 				4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */,
+				B4E408EC204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib in Resources */,
 				E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
@@ -243,10 +260,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */,
+				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */,
+				B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,
 			);

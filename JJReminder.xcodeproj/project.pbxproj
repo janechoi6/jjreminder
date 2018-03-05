@@ -15,7 +15,16 @@
 		4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD22037276E00AF55D8 /* Assets.xcassets */; };
 		4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DD42037276E00AF55D8 /* LaunchScreen.storyboard */; };
 		4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */; };
+		4AABA0942046BD37009A7656 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA0892046BD36009A7656 /* FMResultSet.m */; };
+		4AABA0952046BD37009A7656 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA08C2046BD36009A7656 /* FMDatabaseAdditions.m */; };
+		4AABA0962046BD37009A7656 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA08E2046BD36009A7656 /* FMDatabaseQueue.m */; };
+		4AABA0972046BD37009A7656 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA0902046BD37009A7656 /* FMDatabasePool.m */; };
+		4AABA0982046BD37009A7656 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AABA0932046BD37009A7656 /* FMDatabase.m */; };
+		4ABEBF42204962120095AF8B /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEBF41204962120095AF8B /* DBManager.swift */; };
 		4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7B4820459456000E5882 /* ScreenUtils.swift */; };
+		4AFB76B9204D67D20012B324 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB76B8204D67D20012B324 /* Task.swift */; };
+		4AFB76BB204D67DC0012B324 /* JJPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB76BA204D67DC0012B324 /* JJPTask.swift */; };
+		4AFB76BD204D7F2C0012B324 /* tasks.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4AFB76BC204D7F2C0012B324 /* tasks.tsv */; };
 		B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408E4204D5C4600C456A9 /* JJPDetailsTitleCell.swift */; };
 		B4E408E7204D5C4600C456A9 /* JJPDetailsTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */; };
 		B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */; };
@@ -39,7 +48,23 @@
 		4A900DD52037276E00AF55D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A900DD72037276E00AF55D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A900DDD203730C000AF55D8 /* JJPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPMainViewController.swift; sourceTree = "<group>"; };
+		4AABA0882046BD35009A7656 /* JJReminder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JJReminder-Bridging-Header.h"; sourceTree = "<group>"; };
+		4AABA0892046BD36009A7656 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4AABA08A2046BD36009A7656 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4AABA08B2046BD36009A7656 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4AABA08C2046BD36009A7656 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4AABA08D2046BD36009A7656 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4AABA08E2046BD36009A7656 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4AABA08F2046BD36009A7656 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		4AABA0902046BD37009A7656 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4AABA0912046BD37009A7656 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4AABA0922046BD37009A7656 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4AABA0932046BD37009A7656 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4ABEBF41204962120095AF8B /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		4ADB7B4820459456000E5882 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		4AFB76B8204D67D20012B324 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4AFB76BA204D67DC0012B324 /* JJPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPTask.swift; sourceTree = "<group>"; };
+		4AFB76BC204D7F2C0012B324 /* tasks.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tasks.tsv; path = ../../../../Desktop/tasks.tsv; sourceTree = "<group>"; };
 		B4E408E4204D5C4600C456A9 /* JJPDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsTitleCell.swift; sourceTree = "<group>"; };
 		B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsTitleCell.xib; sourceTree = "<group>"; };
 		B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsDescriptionCell.swift; sourceTree = "<group>"; };
@@ -87,9 +112,29 @@
 				4ADB7B422045936D000E5882 /* ItemList */,
 				4ADB7B432045937A000E5882 /* Common */,
 				4ADB7B4620459412000E5882 /* Resources */,
+				4AABA0872046BD09009A7656 /* FMDB */,
 				4A900DD72037276E00AF55D8 /* Info.plist */,
 			);
 			path = JJReminder;
+			sourceTree = "<group>";
+		};
+		4AABA0872046BD09009A7656 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				4AABA0922046BD37009A7656 /* FMDatabase.h */,
+				4AABA0932046BD37009A7656 /* FMDatabase.m */,
+				4AABA0912046BD37009A7656 /* FMDatabaseAdditions.h */,
+				4AABA08C2046BD36009A7656 /* FMDatabaseAdditions.m */,
+				4AABA08B2046BD36009A7656 /* FMDatabasePool.h */,
+				4AABA0902046BD37009A7656 /* FMDatabasePool.m */,
+				4AABA08D2046BD36009A7656 /* FMDatabaseQueue.h */,
+				4AABA08E2046BD36009A7656 /* FMDatabaseQueue.m */,
+				4AABA08F2046BD36009A7656 /* FMDB.h */,
+				4AABA08A2046BD36009A7656 /* FMResultSet.h */,
+				4AABA0892046BD36009A7656 /* FMResultSet.m */,
+				4AABA0882046BD35009A7656 /* JJReminder-Bridging-Header.h */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		4ADB7B422045936D000E5882 /* ItemList */ = {
@@ -104,6 +149,7 @@
 		4ADB7B432045937A000E5882 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4AFB76B7204D67C80012B324 /* Model */,
 				B4E408F1204D76E000C456A9 /* Extention */,
 				4ADB7B472045942F000E5882 /* Utils */,
 				4A900DC82037276E00AF55D8 /* AppDelegate.swift */,
@@ -133,6 +179,7 @@
 		4ADB7B4620459412000E5882 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AFB76BC204D7F2C0012B324 /* tasks.tsv */,
 				4A900DD22037276E00AF55D8 /* Assets.xcassets */,
 				E1BC3E8820444E5000519CAF /* Localizable.strings */,
 				4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */,
@@ -144,10 +191,21 @@
 			isa = PBXGroup;
 			children = (
 				4ADB7B4820459456000E5882 /* ScreenUtils.swift */,
+				4ABEBF41204962120095AF8B /* DBManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4AFB76B7204D67C80012B324 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AFB76B8204D67D20012B324 /* Task.swift */,
+				4AFB76BA204D67DC0012B324 /* JJPTask.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E12EEAE72039BD03007D19B5 /* Detail */ = {
 		B4E408E8204D5C6000C456A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +278,7 @@
 				TargetAttributes = {
 					4A900DC42037276D00AF55D8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -257,6 +316,7 @@
 				E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
+				4AFB76BD204D7F2C0012B324 /* tasks.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +332,19 @@
 				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
+				4AABA0942046BD37009A7656 /* FMResultSet.m in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */,
 				B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,
+				4ABEBF42204962120095AF8B /* DBManager.swift in Sources */,
+				4AFB76B9204D67D20012B324 /* Task.swift in Sources */,
+				4AFB76BB204D67DC0012B324 /* JJPTask.swift in Sources */,
+				4AABA0972046BD37009A7656 /* FMDatabasePool.m in Sources */,
+				4AABA0952046BD37009A7656 /* FMDatabaseAdditions.m in Sources */,
+				4AABA0982046BD37009A7656 /* FMDatabase.m in Sources */,
+				4AABA0962046BD37009A7656 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,12 +492,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JJReminder/FMDB/JJReminder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,12 +510,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JJReminder/FMDB/JJReminder-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

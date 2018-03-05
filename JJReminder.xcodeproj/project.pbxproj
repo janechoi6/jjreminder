@@ -21,6 +21,8 @@
 		B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */; };
 		B4E408EC204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */; };
 		B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408EF204D732100C456A9 /* UITableViewCell+.swift */; };
+		B4E408F4204D7CCB00C456A9 /* JJPDetailsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408F2204D7CCB00C456A9 /* JJPDetailsSwitchCell.swift */; };
+		B4E408F5204D7CCB00C456A9 /* JJPDetailsSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E408F3204D7CCB00C456A9 /* JJPDetailsSwitchCell.xib */; };
 		E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */; };
 		E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */; };
 		E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1BC3E8820444E5000519CAF /* Localizable.strings */; };
@@ -43,6 +45,8 @@
 		B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsDescriptionCell.swift; sourceTree = "<group>"; };
 		B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsDescriptionCell.xib; sourceTree = "<group>"; };
 		B4E408EF204D732100C456A9 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		B4E408F2204D7CCB00C456A9 /* JJPDetailsSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsSwitchCell.swift; sourceTree = "<group>"; };
+		B4E408F3204D7CCB00C456A9 /* JJPDetailsSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsSwitchCell.xib; sourceTree = "<group>"; };
 		E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsViewController.swift; sourceTree = "<group>"; };
 		E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsViewController.xib; sourceTree = "<group>"; };
 		E1BC3E8720444E5000519CAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */,
 				B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */,
 				B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */,
+				B4E408F2204D7CCB00C456A9 /* JJPDetailsSwitchCell.swift */,
+				B4E408F3204D7CCB00C456A9 /* JJPDetailsSwitchCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E408E7204D5C4600C456A9 /* JJPDetailsTitleCell.xib in Resources */,
+				B4E408F5204D7CCB00C456A9 /* JJPDetailsSwitchCell.xib in Resources */,
 				4A900DD62037276E00AF55D8 /* LaunchScreen.storyboard in Resources */,
 				E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */,
 				4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */,
@@ -261,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */,
+				B4E408F4204D7CCB00C456A9 /* JJPDetailsSwitchCell.swift in Sources */,
 				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,

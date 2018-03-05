@@ -1,5 +1,5 @@
 //
-//  JJPDetailsDescriptionCell.swift
+//  JJPDetailsSwitchCell.swift
 //  JJReminder
 //
 //  Created by Band iOS on 2018. 3. 5..
@@ -8,15 +8,24 @@
 
 import UIKit
 
-class JJPDetailsDescriptionCell: UITableViewCell {
+class JJPDetailsSwitchCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var onOffSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        titleLabel.text = NSLocalizedString("details.title.description", comment: "")
+        initViews()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        initViews()
+    }
+    
+    func initViews() {
+        titleLabel.text = ""
+        onOffSwitch.setOn(false, animated: false)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

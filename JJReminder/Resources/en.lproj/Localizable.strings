@@ -7,3 +7,8 @@
 */
 "details" = "Details";
 "done" = "Done";
+
+"details.title.description" = "Desctiption";
+"details.title.usingAlarm" = "Using alarms";
+"details.title.alarm" = "Alarm";
+"details.title.repeat" = "Repeat";

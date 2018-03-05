@@ -31,7 +31,8 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
             // section 1 - alaram
             (SectionType.Alarm.rawValue, [
                 "is_alarm",
-                "alaram"
+                "alarm",
+                "alarm_repeat"
             ]),
             // section 2 - option
             (SectionType.Option.rawValue, [
@@ -66,9 +67,9 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func setupViews() -> Void {
+        // RegisterCell
         JJPDetailsTitleCell.registerToTableView(tableView: tableView)
-        
-//        print("\(String(describing: tableViewMap.index(forKey: SectionType.Title)))")
+        JJPDetailsDescriptionCell.registerToTableView(tableView: tableView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,26 +85,24 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if section != 1 {
-//            return 1//tableViewMap.index(forKey: section as! SectionType)
-//        } else {
-//            // yjm. 알람 여부에 따라 반환값 다름(알람 x -> 1 / 알람 o -> map.count)
-////            return 1
-//            return 1//1tableViewMap[section].count
-//        }
-//        if section == SectionType.Title.rawValue {
-//
-//        }
-        
         let sectionInfo:(section: Int, rowInfo: [String]) = tableViewMap[section]
+        if section == SectionType.Alarm.rawValue {
+            //TODO: 알람 사용 유무
+            
+        }
         return sectionInfo.rowInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.section == SectionType.Title.rawValue {
+            //TODO: 더 이쁜 row == Int 판별법을 생각해보자.
             if indexPath.row == 0 {
                 let cell: JJPDetailsTitleCell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
+                
+                return cell
+            } else if indexPath.row == 1 {
+                let cell = JJPDetailsDescriptionCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
                 
                 return cell
             }

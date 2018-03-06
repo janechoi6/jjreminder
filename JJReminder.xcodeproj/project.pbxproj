@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */; };
 		4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */; };
+		4A8F0835204E4CFF0056E832 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0834204E4CFE0056E832 /* DBManager.swift */; };
+		4A8F0839204E4D2C0056E832 /* JJPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0837204E4D2C0056E832 /* JJPTask.swift */; };
+		4A8F083A204E4D2C0056E832 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0838204E4D2C0056E832 /* Task.swift */; };
+		4A8F0859204E4E170056E832 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0851204E4E160056E832 /* FMDatabaseAdditions.m */; };
+		4A8F085A204E4E170056E832 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0853204E4E170056E832 /* FMDatabasePool.m */; };
+		4A8F085B204E4E170056E832 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0855204E4E170056E832 /* FMResultSet.m */; };
+		4A8F085C204E4E170056E832 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0856204E4E170056E832 /* FMDatabase.m */; };
+		4A8F085D204E4E170056E832 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0858204E4E170056E832 /* FMDatabaseQueue.m */; };
 		4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DC82037276E00AF55D8 /* AppDelegate.swift */; };
 		4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A900DCC2037276E00AF55D8 /* Main.storyboard */; };
 		4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */; };
@@ -29,6 +37,21 @@
 /* Begin PBXFileReference section */
 		4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A8F0834204E4CFE0056E832 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		4A8F0837204E4D2C0056E832 /* JJPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JJPTask.swift; path = JJReminder/Common/Model/JJPTask.swift; sourceTree = SOURCE_ROOT; };
+		4A8F0838204E4D2C0056E832 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = JJReminder/Common/Model/Task.swift; sourceTree = SOURCE_ROOT; };
+		4A8F084D204E4E150056E832 /* JJReminder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JJReminder-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A8F084E204E4E160056E832 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = JJReminder/FMDB/FMDatabaseAdditions.h; sourceTree = SOURCE_ROOT; };
+		4A8F084F204E4E160056E832 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = JJReminder/FMDB/FMDB.h; sourceTree = SOURCE_ROOT; };
+		4A8F0850204E4E160056E832 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = JJReminder/FMDB/FMResultSet.h; sourceTree = SOURCE_ROOT; };
+		4A8F0851204E4E160056E832 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = JJReminder/FMDB/FMDatabaseAdditions.m; sourceTree = SOURCE_ROOT; };
+		4A8F0852204E4E160056E832 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = JJReminder/FMDB/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
+		4A8F0853204E4E170056E832 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = JJReminder/FMDB/FMDatabasePool.m; sourceTree = SOURCE_ROOT; };
+		4A8F0854204E4E170056E832 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = JJReminder/FMDB/FMDatabase.h; sourceTree = SOURCE_ROOT; };
+		4A8F0855204E4E170056E832 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = JJReminder/FMDB/FMResultSet.m; sourceTree = SOURCE_ROOT; };
+		4A8F0856204E4E170056E832 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = JJReminder/FMDB/FMDatabase.m; sourceTree = SOURCE_ROOT; };
+		4A8F0857204E4E170056E832 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = JJReminder/FMDB/FMDatabaseQueue.h; sourceTree = SOURCE_ROOT; };
+		4A8F0858204E4E170056E832 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = JJReminder/FMDB/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
 		4A900DC52037276D00AF55D8 /* JJReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A900DC82037276E00AF55D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A900DCD2037276E00AF55D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +83,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A8F0836204E4D1F0056E832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A8F0837204E4D2C0056E832 /* JJPTask.swift */,
+				4A8F0838204E4D2C0056E832 /* Task.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4A8F083B204E4D380056E832 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				4A8F0854204E4E170056E832 /* FMDatabase.h */,
+				4A8F0856204E4E170056E832 /* FMDatabase.m */,
+				4A8F084E204E4E160056E832 /* FMDatabaseAdditions.h */,
+				4A8F0851204E4E160056E832 /* FMDatabaseAdditions.m */,
+				4A8F0852204E4E160056E832 /* FMDatabasePool.h */,
+				4A8F0853204E4E170056E832 /* FMDatabasePool.m */,
+				4A8F0857204E4E170056E832 /* FMDatabaseQueue.h */,
+				4A8F0858204E4E170056E832 /* FMDatabaseQueue.m */,
+				4A8F084F204E4E160056E832 /* FMDB.h */,
+				4A8F0850204E4E160056E832 /* FMResultSet.h */,
+				4A8F0855204E4E170056E832 /* FMResultSet.m */,
+				4A8F084D204E4E150056E832 /* JJReminder-Bridging-Header.h */,
+			);
+			name = FMDB;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4A900DBC2037276D00AF55D8 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +132,7 @@
 		4A900DC72037276D00AF55D8 /* JJReminder */ = {
 			isa = PBXGroup;
 			children = (
+				4A8F083B204E4D380056E832 /* FMDB */,
 				E12EEAE72039BD03007D19B5 /* Detail */,
 				4ADB7B422045936D000E5882 /* ItemList */,
 				4ADB7B432045937A000E5882 /* Common */,
@@ -100,6 +154,7 @@
 		4ADB7B432045937A000E5882 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4A8F0836204E4D1F0056E832 /* Model */,
 				B4E408F1204D76E000C456A9 /* Extention */,
 				4ADB7B472045942F000E5882 /* Utils */,
 				4A900DC82037276E00AF55D8 /* AppDelegate.swift */,
@@ -139,6 +194,7 @@
 		4ADB7B472045942F000E5882 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A8F0834204E4CFE0056E832 /* DBManager.swift */,
 				4ADB7B4820459456000E5882 /* ScreenUtils.swift */,
 			);
 			path = Utils;
@@ -214,6 +270,7 @@
 				TargetAttributes = {
 					4A900DC42037276D00AF55D8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,15 +317,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8F0839204E4D2C0056E832 /* JJPTask.swift in Sources */,
 				B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */,
 				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
+				4A8F083A204E4D2C0056E832 /* Task.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
+				4A8F0835204E4CFF0056E832 /* DBManager.swift in Sources */,
+				4A8F0859204E4E170056E832 /* FMDatabaseAdditions.m in Sources */,
+				4A8F085B204E4E170056E832 /* FMResultSet.m in Sources */,
 				4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */,
 				B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */,
+				4A8F085A204E4E170056E832 /* FMDatabasePool.m in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
+				4A8F085D204E4E170056E832 /* FMDatabaseQueue.m in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,
+				4A8F085C204E4E170056E832 /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,12 +481,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JJReminder/New Group/JJReminder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,12 +499,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JJReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jjproject.JJReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JJReminder/New Group/JJReminder-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

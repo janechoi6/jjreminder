@@ -7,3 +7,8 @@
 */
 "details" = "세부사항";
 "done" = "완료";
+
+"details.title.description" = "설명";
+"details.title.usingAlarm" = "알람 사용";
+"details.title.alarm" = "알람";
+"details.title.repeat" = "반복";

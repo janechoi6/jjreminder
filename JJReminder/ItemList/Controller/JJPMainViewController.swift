@@ -12,7 +12,6 @@ class JJPMainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate var numberOfItemsPerRow = 1
-
     private var tasks: [JJPTask]!
     
     private var collectionViewCellSize = CGSize.zero
@@ -24,15 +23,15 @@ class JJPMainViewController: UIViewController {
         // Do any additional setup after loading the view.
         setup()
     }
-
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if DBManager.shared.createDatabase() {
             DBManager.shared.insertTaskData()
-        }
+        }    
         tasks = DBManager.shared.loadTasks()
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

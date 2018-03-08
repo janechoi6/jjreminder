@@ -157,7 +157,6 @@ class DBManager: NSObject {
                     }
 
                     tasks.append(task)
-                    print(tasks)
                 }
             }
             catch {

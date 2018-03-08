@@ -73,12 +73,13 @@ extension JJPMainViewController: UICollectionViewDelegateFlowLayout {
 
 extension JJPMainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier, for: indexPath) as! JJPItemCollectionViewCell
-        cell.titleLabel.text = "\(indexPath.item)"
+        let task = tasks[indexPath.item]
+        cell.titleLabel.text = "\(task.title)"
         return cell
     }
     

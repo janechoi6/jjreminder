@@ -12,7 +12,7 @@ class JJPMainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate var numberOfItemsPerRow = 1
-    private var tasks: [JJPTask]!
+    private var tasks: [Task]?
     
     private var collectionViewCellSize = CGSize.zero
     
@@ -73,13 +73,19 @@ extension JJPMainViewController: UICollectionViewDelegateFlowLayout {
 
 extension JJPMainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tasks.count
+        if let tasks = tasks {
+            return tasks.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JJPItemCollectionViewCell.reuseIdentifier, for: indexPath) as! JJPItemCollectionViewCell
+        guard let tasks = tasks else { return cell }
+        
         let task = tasks[indexPath.item]
         cell.titleLabel.text = "\(task.title)"
+        cell.statusButton.setSelected(task.status)
         return cell
     }
     

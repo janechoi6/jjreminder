@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */; };
 		4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */; };
+		4A7A29912050FB4700F226A1 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A29902050FB4700F226A1 /* StatusButton.swift */; };
+		4A7A29932051034500F226A1 /* tasks.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A29922051034400F226A1 /* tasks.tsv */; };
 		4A8F0835204E4CFF0056E832 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0834204E4CFE0056E832 /* DBManager.swift */; };
 		4A8F0839204E4D2C0056E832 /* JJPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0837204E4D2C0056E832 /* JJPTask.swift */; };
 		4A8F083A204E4D2C0056E832 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F0838204E4D2C0056E832 /* Task.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A7A29902050FB4700F226A1 /* StatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
+		4A7A29922051034400F226A1 /* tasks.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tasks.tsv; path = ../../../../Desktop/tasks.tsv; sourceTree = "<group>"; };
 		4A8F0834204E4CFE0056E832 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		4A8F0837204E4D2C0056E832 /* JJPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JJPTask.swift; path = JJReminder/Common/Model/JJPTask.swift; sourceTree = SOURCE_ROOT; };
 		4A8F0838204E4D2C0056E832 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = JJReminder/Common/Model/Task.swift; sourceTree = SOURCE_ROOT; };
@@ -177,6 +181,7 @@
 			children = (
 				4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */,
 				4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */,
+				4A7A29902050FB4700F226A1 /* StatusButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		4ADB7B4620459412000E5882 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A7A29922051034400F226A1 /* tasks.tsv */,
 				4A900DD22037276E00AF55D8 /* Assets.xcassets */,
 				E1BC3E8820444E5000519CAF /* Localizable.strings */,
 				4A900DCF2037276E00AF55D8 /* JJReminder.xcdatamodeld */,
@@ -307,6 +313,7 @@
 				E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
+				4A7A29932051034500F226A1 /* tasks.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +337,7 @@
 				4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */,
 				B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */,
 				4A8F085A204E4E170056E832 /* FMDatabasePool.m in Sources */,
+				4A7A29912050FB4700F226A1 /* StatusButton.swift in Sources */,
 				4A900DDE203730C000AF55D8 /* JJPMainViewController.swift in Sources */,
 				4A8F085D204E4E170056E832 /* FMDatabaseQueue.m in Sources */,
 				4A900DD12037276E00AF55D8 /* JJReminder.xcdatamodeld in Sources */,

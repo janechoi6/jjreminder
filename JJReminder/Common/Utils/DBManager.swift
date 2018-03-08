@@ -129,8 +129,8 @@ class DBManager: NSObject {
         }
     }
     
-    func loadTasks() -> [JJPTask]! {
-        var tasks: [JJPTask]!
+    func loadTasks() -> [Task]! {
+        var tasks: [Task]!
         
         if openDatabase() {
             let query = "select * from task order by \(field_TaskID) asc"
@@ -141,7 +141,7 @@ class DBManager: NSObject {
                 
                 
                 while results.next() {
-                    let task = JJPTask(taskID: Int(results.int(forColumn: field_TaskID)),
+                    let task = Task(taskID: Int(results.int(forColumn: field_TaskID)),
                                        title: results.string(forColumn: field_TaskTitle)!,
                                           status: results.bool(forColumn: field_TaskStatus)
 //                                          category: results.string(forColumn: field_MovieCategory),
@@ -153,7 +153,7 @@ class DBManager: NSObject {
                     )
 
                     if tasks == nil {
-                        tasks = [JJPTask]()
+                        tasks = [Task]()
                     }
 
                     tasks.append(task)

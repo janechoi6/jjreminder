@@ -13,10 +13,18 @@ class JJPItemCollectionViewCell: UICollectionViewCell {
     static let nibName = "JJPItemCollectionViewCell"
     static let reuseIdentifier = "JJPItemCollectionViewCellReuseID"
     
+    @IBOutlet weak var statusButton: StatusButton!
     @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBAction func touchUpInsideStatusButton(_ sender: StatusButton) {
+        
+        statusButton.isSelected = !sender.isSelected
+        
+        
+    }
 }

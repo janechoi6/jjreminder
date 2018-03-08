@@ -25,19 +25,34 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ3-pM-gw7" customClass="StatusButton" customModule="JJReminder" customModuleProvider="target">
+                        <rect key="frame" x="163" y="21" width="50" height="50"/>
+                        <state key="normal" image="unchecked-checkbox"/>
+                        <state key="selected" image="checked-checkbox"/>
+                        <connections>
+                            <action selector="touchUpInsideStatusButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="m1e-Oc-eea"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.87502021762390181" green="0.91382111651852971" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="8Lr-tG-aZm" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="0Ae-2r-QE3"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="KJ3-pM-gw7" secondAttribute="trailing" constant="15" id="1ei-qB-45x"/>
                 <constraint firstItem="8Lr-tG-aZm" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="50" id="DG8-d0-gyc"/>
+                <constraint firstItem="KJ3-pM-gw7" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="ud5-ZJ-8uy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="228" height="92"/>
             <connections>
+                <outlet property="statusButton" destination="KJ3-pM-gw7" id="CiV-a3-bFR"/>
                 <outlet property="titleLabel" destination="8Lr-tG-aZm" id="2Fz-N7-y2W"/>
             </connections>
             <point key="canvasLocation" x="123" y="118"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="checked-checkbox" width="50" height="50"/>
+        <image name="unchecked-checkbox" width="50" height="50"/>
+    </resources>
 </document>

@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class Task {
+    var taskID: Int
+    var title: String
+    var status: Bool
+    
+    init(taskID: Int, title: String, status: Bool) {
+        self.taskID = taskID
+        self.title = title
+        self.status = status
+    }
+}

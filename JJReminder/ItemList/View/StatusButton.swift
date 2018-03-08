@@ -1,0 +1,24 @@
+//
+//  StatusButton.swift
+//  JJReminder
+//
+//  Created by Naver on 2018. 3. 8..
+//  Copyright © 2018년 JJProject. All rights reserved.
+//
+
+import UIKit
+
+class StatusButton: UIButton {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+    func setSelected(_ done: Bool) {
+        self.isSelected = done
+    }
+}

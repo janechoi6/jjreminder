@@ -10,12 +10,23 @@ import UIKit
 
 extension UITableViewCell {
     static func registerToTableView(tableView: UITableView) -> Void {
-        let className: String = String(describing: self)
-        tableView.register(UINib(nibName: className, bundle: nil), forCellReuseIdentifier: className)
+        tableView.register(UINib(nibName: self.className, bundle: nil), forCellReuseIdentifier: self.className)
     }
     
     static func dequeueReusableCellToTableView(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let className: String = String(describing: self)
-        return tableView.dequeueReusableCell(withIdentifier: className, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: self.className, for: indexPath)
+    }
+    
+    static func detailStyleSystemCellToTableView(tableView: UITableView, identifier: String, accessoryType: UITableViewCellAccessoryType = UITableViewCellAccessoryType.none) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: identifier)
+        }
+        cell?.accessoryType = accessoryType
+        
+        return cell!
     }
 }
+
+

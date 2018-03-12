@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F966432205276740043B001 /* JJPDetailsSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F966430205276740043B001 /* JJPDetailsSwitchCell.xib */; };
+		2F966433205276740043B001 /* JJPDetailsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F966431205276740043B001 /* JJPDetailsSwitchCell.swift */; };
+		2F9664372052787C0043B001 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9664362052787C0043B001 /* NSObject+.swift */; };
 		4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */; };
 		4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */; };
 		4A7A29912050FB4700F226A1 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A29902050FB4700F226A1 /* StatusButton.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F966430205276740043B001 /* JJPDetailsSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDetailsSwitchCell.xib; sourceTree = "<group>"; };
+		2F966431205276740043B001 /* JJPDetailsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJPDetailsSwitchCell.swift; sourceTree = "<group>"; };
+		2F9664362052787C0043B001 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A7A29902050FB4700F226A1 /* StatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 				B4E408E5204D5C4600C456A9 /* JJPDetailsTitleCell.xib */,
 				B4E408E9204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift */,
 				B4E408EA204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib */,
+				2F966431205276740043B001 /* JJPDetailsSwitchCell.swift */,
+				2F966430205276740043B001 /* JJPDetailsSwitchCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E408EF204D732100C456A9 /* UITableViewCell+.swift */,
+				2F9664362052787C0043B001 /* NSObject+.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 				B4E408EC204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib in Resources */,
 				E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
+				2F966432205276740043B001 /* JJPDetailsSwitchCell.xib in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
 				4A7A29972051052E00F226A1 /* tasks.tsv in Resources */,
 			);
@@ -325,9 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8F0839204E4D2C0056E832 /* JJPTask.swift in Sources */,
+				2F966433205276740043B001 /* JJPDetailsSwitchCell.swift in Sources */,
 				B4E408EB204D6E4100C456A9 /* JJPDetailsDescriptionCell.swift in Sources */,
 				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
+				2F9664372052787C0043B001 /* NSObject+.swift in Sources */,
 				4A8F083A204E4D2C0056E832 /* Task.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,

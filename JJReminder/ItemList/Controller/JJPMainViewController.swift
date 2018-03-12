@@ -76,7 +76,7 @@ extension JJPMainViewController: UICollectionViewDataSource {
         if let tasks = tasks {
             return tasks.count
         }
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

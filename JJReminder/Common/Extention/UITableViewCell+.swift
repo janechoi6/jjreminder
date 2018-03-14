@@ -17,11 +17,22 @@ extension UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: self.className, for: indexPath)
     }
     
-    static func detailStyleSystemCellToTableView(tableView: UITableView, identifier: String, accessoryType: UITableViewCellAccessoryType = UITableViewCellAccessoryType.none) -> UITableViewCell {
+    static func systemDefaultStyleCellToTableView(tableView: UITableView, accessoryType: UITableViewCellAccessoryType = UITableViewCellAccessoryType.none) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "systemDefaultStyleCell")
         if cell == nil {
-            cell = UITableViewCell(style: .value1, reuseIdentifier: identifier)
+            cell = UITableViewCell(style: .default, reuseIdentifier: "systemDefaultStyleCell")
+        }
+        cell?.accessoryType = accessoryType
+        
+        return cell!
+    }
+    
+    static func systemDetailStyleCellToTableView(tableView: UITableView, accessoryType: UITableViewCellAccessoryType = UITableViewCellAccessoryType.none) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "systemDetailStyleCell")
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "systemDetailStyleCell")
         }
         cell?.accessoryType = accessoryType
         

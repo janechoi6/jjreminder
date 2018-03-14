@@ -58,11 +58,6 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
         ]
     }
     
-    let isAlarmTableViewCellName = "isAlarmTableViewCell"
-    let statusTableCellName = "statusTableCell"
-    let alarmTableCellName = "alarmTableCell"
-    let alarmRepeatTableCellName = "alarmRepeatTableCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,7 +110,7 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
         let rowType = tableViewMap[indexPath.section].rowTypes[indexPath.row]
         
         if rowType == .TitleRow {
-            let cell: JJPDetailsTitleCell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
+            let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
             return cell
 
         } else if rowType == .DescriptionRow {
@@ -123,7 +118,7 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
             return cell
 
         } else if rowType == .StatusRow {
-            let cell = UITableViewCell.detailStyleSystemCellToTableView(tableView: tableView, identifier: statusTableCellName, accessoryType: .disclosureIndicator)
+            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
@@ -133,24 +128,38 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
             let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
             return cell
         } else if rowType == .AlarmRow {
-            let cell = UITableViewCell.detailStyleSystemCellToTableView(tableView: tableView, identifier: statusTableCellName)
+            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
         } else if rowType == .AlarmRepeatRow {
-            let cell = UITableViewCell.detailStyleSystemCellToTableView(tableView: tableView, identifier: statusTableCellName, accessoryType: .disclosureIndicator)
+            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
             
         } else if rowType == .PriorityRow {
+            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
+            cell.textLabel?.text = "title"
+            cell.detailTextLabel?.text = "details"
+            
+            return cell
             
         } else if rowType == .ListRow {
+            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
+            cell.textLabel?.text = "title"
+            cell.detailTextLabel?.text = "details"
+            
+            return cell
             
         } else if rowType == .DeleteRow {
+            let cell = UITableViewCell.systemDefaultStyleCellToTableView(tableView: tableView)
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.text = "title"
             
+            return cell
         }
         
         let cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: UITableViewCell.className)

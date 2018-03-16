@@ -10,6 +10,8 @@
 		2F966432205276740043B001 /* JJPDetailsSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F966430205276740043B001 /* JJPDetailsSwitchCell.xib */; };
 		2F966433205276740043B001 /* JJPDetailsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F966431205276740043B001 /* JJPDetailsSwitchCell.swift */; };
 		2F9664372052787C0043B001 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9664362052787C0043B001 /* NSObject+.swift */; };
+		2FA7E0C8205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7E0C7205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift */; };
+		2FA7E0CD205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7E0CC205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift */; };
 		4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */; };
 		4A27035E20458B530081A398 /* JJPItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */; };
 		4A7A29912050FB4700F226A1 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A29902050FB4700F226A1 /* StatusButton.swift */; };
@@ -43,6 +45,8 @@
 		2F966430205276740043B001 /* JJPDetailsSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDetailsSwitchCell.xib; sourceTree = "<group>"; };
 		2F966431205276740043B001 /* JJPDetailsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJPDetailsSwitchCell.swift; sourceTree = "<group>"; };
 		2F9664362052787C0043B001 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		2FA7E0C7205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsTableViewModel.swift; sourceTree = "<group>"; };
+		2FA7E0CC205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJPTableViewConfigureProtocol.swift; sourceTree = "<group>"; };
 		4A27035B20458B530081A398 /* JJPItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A27035C20458B530081A398 /* JJPItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A7A29902050FB4700F226A1 /* StatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
@@ -93,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA7E0C2205B6C7F00DB0FAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2FA7E0C7205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2FA7E0CB205B703400DB0FAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2FA7E0CC205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4A8F0836204E4D1F0056E832 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 		4ADB7B432045937A000E5882 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2FA7E0CB205B703400DB0FAC /* ViewModel */,
 				4A8F0836204E4D1F0056E832 /* Model */,
 				B4E408F1204D76E000C456A9 /* Extention */,
 				4ADB7B472045942F000E5882 /* Utils */,
@@ -237,6 +258,7 @@
 		E12EEAE72039BD03007D19B5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				2FA7E0C2205B6C7F00DB0FAC /* ViewModels */,
 				B4E408E8204D5C6000C456A9 /* Views */,
 				E12EEAE82039BD44007D19B5 /* Controllers */,
 			);
@@ -341,11 +363,13 @@
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
 				2F9664372052787C0043B001 /* NSObject+.swift in Sources */,
 				4A8F083A204E4D2C0056E832 /* Task.swift in Sources */,
+				2FA7E0C8205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4A8F0835204E4CFF0056E832 /* DBManager.swift in Sources */,
 				4A8F0859204E4E170056E832 /* FMDatabaseAdditions.m in Sources */,
 				4A8F085B204E4E170056E832 /* FMResultSet.m in Sources */,
+				2FA7E0CD205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift in Sources */,
 				4ADB7B4920459456000E5882 /* ScreenUtils.swift in Sources */,
 				B4E408E6204D5C4600C456A9 /* JJPDetailsTitleCell.swift in Sources */,
 				4A8F085A204E4E170056E832 /* FMDatabasePool.m in Sources */,

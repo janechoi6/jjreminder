@@ -8,55 +8,9 @@
 
 import UIKit
 
-enum SectionType: Int {
-    case IntroSection
-    case AlarmSection
-    case OptionSection
-    case DeleteSection
-}
-
-enum RowType: Int {
-    case TitleRow
-    case DescriptionRow
-    case StatusRow
-    case IsAlarmRow
-    case AlarmRow
-    case AlarmRepeatRow
-    case PriorityRow
-    case ListRow
-    case DeleteRow
-}
-
-class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class JJPDetailsViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    // tableDataSource
-    var tableViewMap: [(sectionType: SectionType, rowTypes: [RowType])] {
-        return [
-            //section 0 - Intro
-            (SectionType.IntroSection, [
-                RowType.TitleRow,
-                RowType.DescriptionRow,
-                RowType.StatusRow
-            ]),
-            // section 1 - alaram
-            (SectionType.AlarmSection, [
-                RowType.IsAlarmRow,
-                RowType.AlarmRow,
-                RowType.AlarmRepeatRow
-            ]),
-            // section 2 - option
-            (SectionType.OptionSection, [
-                RowType.PriorityRow,
-                RowType.ListRow
-            ]),
-            // section 3 - delete
-            (SectionType.DeleteSection, [
-                RowType.DeleteRow
-            ])
-        ]
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +33,9 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func setupViews() -> Void {
+        
+        tableView.estimatedRowHeight = 44
+        
         /* RegisterCell */
         JJPDetailsTitleCell.registerToTableView(tableView: tableView)
         JJPDetailsDescriptionCell.registerToTableView(tableView: tableView)
@@ -90,71 +47,83 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Action
 
-    // MARK: - UITableViewDataSource
+    @objc func touchUpInsideLeftBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc func touchUpInsideRightBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
+        print("click - right")
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension JJPDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewMap.count
+        return JJPDetailsTableViewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewMap[section].sectionType == .AlarmSection {
-            //TODO: 알람 사용 유무
-        }
-
-        return tableViewMap[section].rowTypes.count
+        return JJPDetailsTableViewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let rowType = tableViewMap[indexPath.section].rowTypes[indexPath.row]
         
-        if rowType == .TitleRow {
-            let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
+        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        
+        if rowType == .Title {
+            let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
+            cell.titleTextView.delegate = self as? UITextViewDelegate
             return cell
-
-        } else if rowType == .DescriptionRow {
+            
+        } else if rowType == .Description {
             let cell = JJPDetailsDescriptionCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
             return cell
-
-        } else if rowType == .StatusRow {
+            
+        } else if rowType == .Status {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
             
-        } else if rowType == .IsAlarmRow {
+        } else if rowType == .IsAlarm {
             let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
             return cell
-        } else if rowType == .AlarmRow {
+        } else if rowType == .Alarm {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
-        } else if rowType == .AlarmRepeatRow {
+        } else if rowType == .AlarmRepeat {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
             
-        } else if rowType == .PriorityRow {
+        } else if rowType == .Priority {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
             
-        } else if rowType == .ListRow {
+        } else if rowType == .List {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = "title"
             cell.detailTextLabel?.text = "details"
             
             return cell
             
-        } else if rowType == .DeleteRow {
+        } else if rowType == .Delete {
             let cell = UITableViewCell.systemDefaultStyleCellToTableView(tableView: tableView)
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.text = "title"
@@ -166,16 +135,4 @@ class JJPDetailsViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.text = "** Invalid Cell **"
         return cell
     }
-
-    // MARK: - Action
-
-    @objc func touchUpInsideLeftBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
-        dismiss(animated: true, completion: nil)
-    }
-
-    @objc func touchUpInsideRightBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
-        print("click - right")
-    }
-
-
 }

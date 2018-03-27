@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JJPDetailsViewController: UIViewController, UITableViewDelegate {
+class JJPDetailsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -87,15 +87,30 @@ extension JJPDetailsViewController: UITableViewDataSource {
             return cell
             
         } else if rowType == .Status {
-            let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsSwitchCell
+            cell.titleLabel.text = NSLocalizedString("details.title.complete", comment: "")
+            cell.onOffSwitchCompletion = { (isOn: Bool) -> Void in
+                if isOn {
+                    print("on")
+                } else {
+                    print("off")
+                }
+            }
             
             return cell
             
         } else if rowType == .IsAlarm {
-            let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
+            let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsSwitchCell
+            cell.titleLabel.text = NSLocalizedString("details.title.usingAlarm", comment: "")
+            cell.onOffSwitchCompletion = { (isOn: Bool) -> Void in
+                if isOn {
+                    print("on")
+                } else {
+                    print("off")
+                }
+            }
             return cell
+            
         } else if rowType == .Alarm {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView)
             cell.textLabel?.text = "title"
@@ -126,7 +141,7 @@ extension JJPDetailsViewController: UITableViewDataSource {
         } else if rowType == .Delete {
             let cell = UITableViewCell.systemDefaultStyleCellToTableView(tableView: tableView)
             cell.textLabel?.textAlignment = .center
-            cell.textLabel?.text = "title"
+            cell.textLabel?.text = NSLocalizedString("details.title.delete", comment: "")
             
             return cell
         }
@@ -136,3 +151,35 @@ extension JJPDetailsViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
+extension JJPDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        
+        if rowType == .Alarm {
+            
+        } else if rowType == .AlarmRepeat {
+            
+        } else if rowType == .Priority {
+            
+        } else if rowType == .List {
+            
+        } else if rowType == .Delete {
+            let alertController = UIAlertController.init(title: nil, message: NSLocalizedString("details.alert.message.delete", comment: ""), preferredStyle: .alert)
+            let noAction = UIAlertAction.init(title: NSLocalizedString("no", comment: ""), style: .cancel, handler:nil)
+            let yesAction = UIAlertAction.init(title: NSLocalizedString("yes", comment: ""), style: .default, handler: { _ in
+                print("삭제 원츄~")
+            })
+            
+            alertController.addAction(noAction)
+            alertController.addAction(yesAction)
+            
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+}
+
+

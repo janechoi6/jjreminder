@@ -10,17 +10,17 @@ import Foundation
 
 class Task {
     var taskID: Int
-    var title: String
+    var title: String?
     var status: Bool
     var shouldAlarm: Bool
-    var alarmAt: Date
-    var createdAt: Date
+    var alarmAt: Date?
+    var createdAt: Date?
     var shouldRepeat: Bool
     var priority: Int
     var listId: Int
-    var memo: String
+    var memo: String?
     
-    init(taskID: Int, title: String, status: Bool, shouldAlarm: Bool, alarmAt: Date, createdAt: Date, shouldRepeat: Bool, priority: Int, listId: Int, memo: String) {
+    init(taskID: Int, title: String?, status: Bool, shouldAlarm: Bool, alarmAt: Date?, createdAt: Date?, shouldRepeat: Bool, priority: Int, listId: Int, memo: String?) {
         self.taskID = taskID
         self.title = title
         self.status = status

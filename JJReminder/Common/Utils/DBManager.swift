@@ -146,12 +146,12 @@ class DBManager: NSObject {
                                          title: results.string(forColumn: field_TaskTitle)!,
                                          status: results.bool(forColumn: field_TaskStatus),
                                          shouldAlarm: results.bool(forColumn: field_TaskShouldAlarm),
-                                         alarmAt: results.date(forColumn: field_TaskAlarmAt)!,
-                                         createdAt: results.date(forColumn: field_TaskShouldAlarm)!,
+                                         alarmAt: results.date(forColumn: field_TaskAlarmAt),
+                                         createdAt: (results.date(forColumn: field_TaskShouldAlarm))!,
                                          shouldRepeat: results.bool(forColumn: field_ShouldRepeat),
                                          priority: Int(results.int(forColumn: field_TaskPriority)),
                                          listId: Int(results.int(forColumn: field_TaskListID)),
-                                         memo: results.string(forColumn: field_TaskMemo)!)
+                                         memo: results.string(forColumn: field_TaskMemo))
 
                     if tasks == nil {
                         tasks = [Task]()

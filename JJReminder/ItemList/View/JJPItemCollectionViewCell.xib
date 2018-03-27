@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ3-pM-gw7" customClass="StatusButton" customModule="JJReminder" customModuleProvider="target">
-                        <rect key="frame" x="163" y="21" width="50" height="50"/>
+                        <rect key="frame" x="188" y="33.5" width="25" height="25"/>
                         <state key="normal" image="unchecked-checkbox"/>
                         <state key="selected" image="checked-checkbox"/>
                         <connections>
@@ -52,7 +52,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="checked-checkbox" width="24" height="50"/>
-        <image name="unchecked-checkbox" width="50" height="50"/>
+        <image name="checked-checkbox" width="25" height="25"/>
+        <image name="unchecked-checkbox" width="25" height="25"/>
     </resources>
 </document>

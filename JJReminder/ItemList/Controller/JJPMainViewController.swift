@@ -88,7 +88,7 @@ extension JJPMainViewController: UICollectionViewDataSource {
         guard let tasks = tasks else { return cell }
         
         let task = tasks[indexPath.item]
-        cell.titleLabel.text = "\(task.title)"
+        cell.titleLabel.text = "\(task.title!)"
         cell.statusButton.setSelected(task.status)
         return cell
     }

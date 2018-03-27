@@ -100,7 +100,6 @@ extension JJPMainViewController: UICollectionViewDataSource {
 
 extension JJPMainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        perform(#selector(showDetails), with: nil, afterDelay: 2)
         perform(#selector(showDetails))
     }
     

@@ -17,10 +17,10 @@ class DBManager: NSObject {
     let field_TaskID = "taskID"
     let field_TaskTitle = "title"
     let field_TaskStatus = "status"
-    let field_TaskAlarmOnDate = "alarmOnDate"
+    let field_TaskShouldAlarm = "alarmOnDate"
     let field_TaskAlarmAt = "alarmAt"
     let field_TaskCreatedAt = "createdAt"
-    let field_TaskRepeat = "repeat"
+    let field_ShouldRepeat = "repeat"
     let field_TaskPriority = "priority"
     let field_TaskListID = "listID"
     let field_TaskMemo = "memo"
@@ -97,7 +97,7 @@ class DBManager: NSObject {
                     
                     var query = ""
                     for task in tasksData {
-                        let taskParts = task.components(separatedBy: "\t")
+                        let taskParts = task.components(separatedBy: ",")
                         
                         if taskParts.count == 9 {
                             let taskTitle = taskParts[0]
@@ -110,7 +110,7 @@ class DBManager: NSObject {
                             let taskListID = taskParts[7]
                             let taskMemo = taskParts[8]
                             
-                            query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskAlarmOnDate), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_TaskRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(taskTitle)', \(taskStatus), \(taskAlarmOnDate), \(taskAlarmAt), \(taskCreatedAt), \(taskRepeat), \(taskPriority), \(taskListID), \(taskMemo));"
+                            query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(taskTitle)', \(taskStatus), \(taskAlarmOnDate), \(taskAlarmAt), \(taskCreatedAt), \(taskRepeat), \(taskPriority), \(taskListID), '\(taskMemo)');"
                             print("query: \(query)")
                         }
                     }
@@ -141,16 +141,17 @@ class DBManager: NSObject {
                 
                 
                 while results.next() {
-                    let task = Task(taskID: Int(results.int(forColumn: field_TaskID)),
-                                       title: results.string(forColumn: field_TaskTitle)!,
-                                          status: results.bool(forColumn: field_TaskStatus)
-//                                          category: results.string(forColumn: field_MovieCategory),
-//                                          year: Int(results.int(forColumn: field_MovieYear)),
-//                                          movieURL: results.string(forColumn: field_MovieURL),
-//                                          coverURL: results.string(forColumn: field_MovieCoverURL),
-//                                          watched: results.bool(forColumn: field_MovieWatched),
-//                                          likes: Int(results.int(forColumn: field_MovieLikes))
-                    )
+                    
+                    let task = Task.init(taskID: Int(results.int(forColumn: field_TaskID)),
+                                         title: results.string(forColumn: field_TaskTitle)!,
+                                         status: results.bool(forColumn: field_TaskStatus),
+                                         shouldAlarm: results.bool(forColumn: field_TaskShouldAlarm),
+                                         alarmAt: results.date(forColumn: field_TaskAlarmAt)!,
+                                         createdAt: results.date(forColumn: field_TaskShouldAlarm)!,
+                                         shouldRepeat: results.bool(forColumn: field_ShouldRepeat),
+                                         priority: Int(results.int(forColumn: field_TaskPriority)),
+                                         listId: Int(results.int(forColumn: field_TaskListID)),
+                                         memo: results.string(forColumn: field_TaskMemo)!)
 
                     if tasks == nil {
                         tasks = [Task]()

@@ -1,4 +1,4 @@
-laundry    0    0    null    0    1    null    0    null
-grocery shopping    0    0    null    0    1    null    0    null
-pilates    1    0    null    0    1    null    1    null
+laundry,0,0,20,0,1,0,0,aaa
+grocery shopping,0,0,100,0,1,0,0,aaa
+pilates,1,0,300,0,1,0,1,aaa
 

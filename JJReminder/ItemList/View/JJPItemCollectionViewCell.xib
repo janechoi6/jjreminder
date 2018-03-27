@@ -52,7 +52,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="checked-checkbox" width="50" height="50"/>
+        <image name="checked-checkbox" width="24" height="50"/>
         <image name="unchecked-checkbox" width="50" height="50"/>
     </resources>
 </document>

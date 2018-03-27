@@ -33,9 +33,18 @@
                                     <outlet property="delegate" destination="p9w-mH-gke" id="tMb-ad-Ami"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTN-pI-H7P">
+                                <rect key="frame" x="297" y="586" width="48" height="48"/>
+                                <state key="normal" image="watermelon"/>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="p9w-mH-gke" eventType="touchUpInside" id="act-dH-zL3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4Pz-av-sax" firstAttribute="bottom" secondItem="sTN-pI-H7P" secondAttribute="bottom" constant="33" id="7UC-nf-F92"/>
+                            <constraint firstItem="sTN-pI-H7P" firstAttribute="trailing" secondItem="fDu-6C-sqe" secondAttribute="trailing" constant="-30" id="Aog-tl-9lw"/>
                             <constraint firstItem="fDu-6C-sqe" firstAttribute="height" secondItem="0kF-WC-6fa" secondAttribute="height" id="WiQ-b3-4Lk"/>
                             <constraint firstItem="fDu-6C-sqe" firstAttribute="leading" secondItem="4Pz-av-sax" secondAttribute="leading" id="pJ8-Y5-EHH"/>
                             <constraint firstItem="fDu-6C-sqe" firstAttribute="top" secondItem="4Pz-av-sax" secondAttribute="top" id="pdM-KJ-Z9m"/>
@@ -69,4 +78,7 @@
             <point key="canvasLocation" x="-109" y="648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="watermelon" width="48" height="48"/>
+    </resources>
 </document>

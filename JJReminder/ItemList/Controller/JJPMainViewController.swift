@@ -31,8 +31,7 @@ class JJPMainViewController: UIViewController {
         }    
         tasks = DBManager.shared.loadTasks()
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,7 +60,12 @@ class JJPMainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func addTaskButtonTapped(_ sender: Any) {
+        let vc = JJPDetailsViewController()
+        let navigationController = UINavigationController(rootViewController: vc)
+        present(navigationController, animated: true, completion: nil)
+    }
 }
 
 extension JJPMainViewController: UICollectionViewDelegateFlowLayout {

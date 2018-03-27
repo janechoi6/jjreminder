@@ -23,8 +23,9 @@ extension UITableViewCell {
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "systemDefaultStyleCell")
         }
+        cell?.selectionStyle = .none
         cell?.accessoryType = accessoryType
-        
+     
         return cell!
     }
     
@@ -34,6 +35,7 @@ extension UITableViewCell {
         if cell == nil {
             cell = UITableViewCell(style: .value1, reuseIdentifier: "systemDetailStyleCell")
         }
+        cell?.selectionStyle = .none
         cell?.accessoryType = accessoryType
         
         return cell!

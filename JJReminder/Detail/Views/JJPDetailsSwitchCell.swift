@@ -13,6 +13,8 @@ class JJPDetailsSwitchCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var onOffSwitch: UISwitch!
     
+    var onOffSwitchCompletion: ( (_ isOn: Bool) -> Void )?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         initViews()
@@ -28,6 +30,10 @@ class JJPDetailsSwitchCell: UITableViewCell {
         onOffSwitch.setOn(false, animated: false)
     }
 
+    @IBAction private func valueChangedOnOffSwitch(_ sender: Any) {
+        onOffSwitchCompletion?(onOffSwitch.isOn)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

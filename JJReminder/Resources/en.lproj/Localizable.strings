@@ -7,8 +7,14 @@
 */
 "details" = "Details";
 "done" = "Done";
+"yes" = "Yes";
+"no" = "NO";
 
 "details.title.description" = "Desctiption";
+"details.title.complete" = "Complete";
 "details.title.usingAlarm" = "Using alarms";
 "details.title.alarm" = "Alarm";
 "details.title.repeat" = "Repeat";
+"details.title.delete" = "Delete";
+
+"details.alert.message.delete" = "Do you want to delete?";

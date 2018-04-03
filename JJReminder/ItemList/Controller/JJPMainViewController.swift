@@ -45,9 +45,10 @@ class JJPMainViewController: UIViewController {
         collectionViewCellSize =  CGSize(width: length, height: 55)
     }
     
-    @objc func showDetails() {
+    func showDetails(task: Task?) {
         
         let vc = JJPDetailsViewController()
+        vc.task = task
         let navigationController = UINavigationController(rootViewController: vc)
         present(navigationController, animated: true, completion: nil)
     }
@@ -100,7 +101,10 @@ extension JJPMainViewController: UICollectionViewDataSource {
 
 extension JJPMainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        perform(#selector(showDetails))
+        if let tasks = tasks {
+            let selectedTask = tasks[indexPath.item]
+            showDetails(task: selectedTask)
+        }
     }
     
 

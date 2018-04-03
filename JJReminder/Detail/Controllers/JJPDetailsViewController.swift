@@ -11,6 +11,7 @@ import UIKit
 class JJPDetailsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    var task: Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()

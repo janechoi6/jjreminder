@@ -56,6 +56,10 @@ class JJPDetailsViewController: UIViewController{
 
     @objc func touchUpInsideRightBarButtonItem(_ barButtonItem: UIBarButtonItem) -> Void {
         print("click - right")
+        let newTask = Task()
+        newTask.title = "hello"
+        DBManager.shared.insertNewTask(task: newTask)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 

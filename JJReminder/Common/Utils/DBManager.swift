@@ -129,6 +129,17 @@ class DBManager: NSObject {
         }
     }
     
+    func insertNewTask(task: Task?) {
+        if openDatabase() {
+            if let task = task, openDatabase() {
+                var query = ""
+                
+                query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(task.title)', \(task.status), \(task.shouldAlarm), \(task.alarmAt), \(task.createdAt), \(task.shouldRepeat), \(task.priority), \(task.listId), '\(task.memo)');"
+                print("query: \(query)")
+            }
+        }
+    }
+    
     func loadTasks() -> [Task]! {
         var tasks: [Task]!
         

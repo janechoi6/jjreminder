@@ -11,6 +11,9 @@ import UIKit
 class JJPDetailsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var tableViewMedel = JJPDetailsTableViewModel()
+    
     var task: Task?
     
     override func viewDidLoad() {
@@ -71,16 +74,16 @@ extension JJPDetailsViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return JJPDetailsTableViewModel.numberOfSections
+        return tableViewMedel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return JJPDetailsTableViewModel.numberOfRowsInSection(section: section)
+        return tableViewMedel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        let rowType = tableViewMedel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
         
         if rowType == .Title {
             let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
@@ -118,28 +121,30 @@ extension JJPDetailsViewController: UITableViewDataSource {
             
         } else if rowType == .Alarm {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.alarm", comment: "")
+            cell.detailTextLabel?.text = "----" // create면 오늘 날짜 세팅, 아니면 디비값 노출.
             
             return cell
         } else if rowType == .AlarmRepeat {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.repeat", comment: "")
+            // 데이터 받아서 보여줘야함.
+            cell.detailTextLabel?.text = NSLocalizedString("details.repeat.never", comment: "")
             
             return cell
             
         } else if rowType == .Priority {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.priority", comment: "")
+            // data
+            cell.detailTextLabel?.text = NSLocalizedString("details.priority.none", comment: "")
             
             return cell
             
         } else if rowType == .List {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.list", comment: "")
+            cell.detailTextLabel?.text = "----"
             
             return cell
             
@@ -162,7 +167,7 @@ extension JJPDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        let rowType = tableViewMedel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
         
         if rowType == .Alarm {
             

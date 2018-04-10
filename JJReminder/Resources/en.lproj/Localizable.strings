@@ -15,6 +15,18 @@
 "details.title.usingAlarm" = "Using alarms";
 "details.title.alarm" = "Alarm";
 "details.title.repeat" = "Repeat";
+"details.title.priority" = "Priority";
+"details.title.list" = "List";
 "details.title.delete" = "Delete";
+
+"details.repeat.never" = "Never";
+"details.repeat.everyDay" = "Every Day";
+"details.repeat.everyWeek" = "Every Week";
+"details.repeat.everyYear" = "Every Year";
+
+"details.priority.none" = "None";
+"details.priority.low" = "Low";
+"details.priority.mediun" = "Medium";
+"details.priority.high" = "High";
 
 "details.alert.message.delete" = "Do you want to delete?";

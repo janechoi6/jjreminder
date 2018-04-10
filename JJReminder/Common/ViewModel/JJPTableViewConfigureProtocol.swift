@@ -9,9 +9,9 @@
 import Foundation
 
 protocol JJTableViewConfigureProtocol {
-    static var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] { get };
-    static var numberOfSections: Int { get };
-    static func numberOfRowsInSection(section: Int) -> Int;
+    var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] { get };
+    var numberOfSections: Int { get };
+    func numberOfRowsInSection(section: Int) -> Int;
 }
 
 protocol JJPTableViewSectionProtocol {

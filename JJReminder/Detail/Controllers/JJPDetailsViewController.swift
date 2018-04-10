@@ -118,28 +118,30 @@ extension JJPDetailsViewController: UITableViewDataSource {
             
         } else if rowType == .Alarm {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.alarm", comment: "")
+            cell.detailTextLabel?.text = "----" // create면 오늘 날짜 세팅, 아니면 디비값 노출.
             
             return cell
         } else if rowType == .AlarmRepeat {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.repeat", comment: "")
+            // 데이터 받아서 보여줘야함.
+            cell.detailTextLabel?.text = NSLocalizedString("details.repeat.never", comment: "")
             
             return cell
             
         } else if rowType == .Priority {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.priority", comment: "")
+            // data
+            cell.detailTextLabel?.text = NSLocalizedString("details.priority.none", comment: "")
             
             return cell
             
         } else if rowType == .List {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
-            cell.textLabel?.text = "title"
-            cell.detailTextLabel?.text = "details"
+            cell.textLabel?.text = NSLocalizedString("details.title.list", comment: "")
+            cell.detailTextLabel?.text = "----"
             
             return cell
             

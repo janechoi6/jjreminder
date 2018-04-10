@@ -134,8 +134,9 @@ class DBManager: NSObject {
             if let task = task, openDatabase() {
                 var query = ""
                 
-                query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(task.title)', \(task.status), \(task.shouldAlarm), \(task.alarmAt), \(task.createdAt), \(task.shouldRepeat), \(task.priority), \(task.listId), '\(task.memo)');"
+                query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(task.title!)', \(task.status ? 1 : 0), \(task.shouldAlarm ? 1 : 0), \(task.alarmAt != nil ? 1: 0), \(task.createdAt != nil ? 1: 0), \(task.shouldRepeat ? 1: 0), \(task.priority), \(task.listId), '\(task.memo)');"
                 print("query: \(query)")
+                database.executeStatements(query)
             }
         }
     }

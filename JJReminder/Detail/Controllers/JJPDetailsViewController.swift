@@ -59,7 +59,7 @@ class JJPDetailsViewController: UIViewController{
         let newTask = Task()
         newTask.title = "hello"
         DBManager.shared.insertNewTask(task: newTask)
-        self.navigationController?.dismiss(animated: true, completion: nil)
+//        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 

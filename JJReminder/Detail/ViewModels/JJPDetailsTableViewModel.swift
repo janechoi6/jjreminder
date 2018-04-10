@@ -28,7 +28,7 @@ enum DetailsTableViewRow : JJPTableViewRowProtocol {
 }
 
 struct JJPDetailsTableViewModel: JJTableViewConfigureProtocol {
-    static var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] {
+    var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] {
         return [
             // section 0 - Intro
             (DetailsTableViewSection.Intro, [
@@ -54,11 +54,11 @@ struct JJPDetailsTableViewModel: JJTableViewConfigureProtocol {
         ]
     }
     
-    static var numberOfSections: Int {
+    var numberOfSections: Int {
         return configure.count
     }
     
-    static func numberOfRowsInSection(section: Int) -> Int {
+    func numberOfRowsInSection(section: Int) -> Int {
 //        if tableViewMap[section].sectionType == .AlarmSection {
 //            //TODO: 알람 사용 유무
 //        }

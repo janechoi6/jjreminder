@@ -11,6 +11,9 @@ import UIKit
 class JJPDetailsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var tableViewMedel = JJPDetailsTableViewModel()
+    
     var task: Task?
     
     override func viewDidLoad() {
@@ -71,16 +74,16 @@ extension JJPDetailsViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return JJPDetailsTableViewModel.numberOfSections
+        return tableViewMedel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return JJPDetailsTableViewModel.numberOfRowsInSection(section: section)
+        return tableViewMedel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        let rowType = tableViewMedel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
         
         if rowType == .Title {
             let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
@@ -164,7 +167,7 @@ extension JJPDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let rowType = JJPDetailsTableViewModel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
+        let rowType = tableViewMedel.configure[indexPath.section].rowTypes[indexPath.row] as! DetailsTableViewRow
         
         if rowType == .Alarm {
             

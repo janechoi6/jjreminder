@@ -30,6 +30,7 @@ class JJPMainViewController: UIViewController {
             DBManager.shared.insertTaskData()
         }    
         tasks = DBManager.shared.loadTasks()
+        collectionView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

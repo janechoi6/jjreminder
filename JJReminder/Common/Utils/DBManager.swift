@@ -17,7 +17,7 @@ class DBManager: NSObject {
     let field_TaskID = "taskID"
     let field_TaskTitle = "title"
     let field_TaskStatus = "status"
-    let field_TaskShouldAlarm = "alarmOnDate"
+    let field_TaskShouldAlarm = "shouldAlarm"
     let field_TaskAlarmAt = "alarmAt"
     let field_TaskCreatedAt = "createdAt"
     let field_ShouldRepeat = "repeat"
@@ -45,7 +45,7 @@ class DBManager: NSObject {
                                             create table task (taskID integer primary key autoincrement not null,
                                             title text not null,
                                             status bool not null default 0,
-                                            alarmOnDate bool not null default 0,
+                                            shouldAlarm bool not null default 0,
                                             alarmAt date,
                                             createdAt date not null,
                                             repeat bool not null default 0,
@@ -102,7 +102,7 @@ class DBManager: NSObject {
                         if taskParts.count == 9 {
                             let taskTitle = taskParts[0]
                             let taskStatus = taskParts[1]
-                            let taskAlarmOnDate = taskParts[2]
+                            let taskShouldAlarm = taskParts[2]
                             let taskAlarmAt = taskParts[3]
                             let taskCreatedAt = taskParts[4]
                             let taskRepeat = taskParts[5]
@@ -110,7 +110,7 @@ class DBManager: NSObject {
                             let taskListID = taskParts[7]
                             let taskMemo = taskParts[8]
                             
-                            query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(taskTitle)', \(taskStatus), \(taskAlarmOnDate), \(taskAlarmAt), \(taskCreatedAt), \(taskRepeat), \(taskPriority), \(taskListID), '\(taskMemo)');"
+                            query += "insert into task (\(field_TaskID), \(field_TaskTitle), \(field_TaskStatus), \(field_TaskShouldAlarm), \(field_TaskAlarmAt), \(field_TaskCreatedAt), \(field_ShouldRepeat), \(field_TaskPriority), \(field_TaskListID), \(field_TaskMemo)) values (null, '\(taskTitle)', \(taskStatus), \(taskShouldAlarm), \(taskAlarmAt), \(taskCreatedAt), \(taskRepeat), \(taskPriority), \(taskListID), '\(taskMemo)');"
                             print("query: \(query)")
                         }
                     }

@@ -28,6 +28,22 @@ enum DetailsTableViewRow : JJPTableViewRowProtocol {
 }
 
 struct JJPDetailsTableViewModel: JJTableViewConfigureProtocol {
+    
+    // 생성 or 수정
+    var isCreate: Bool
+    var task: Task?
+    
+    init(preTask: Task?) {
+        task = preTask
+        
+        if self.task == nil {
+            isCreate = true
+            self.task = Task(taskID: -1, title: nil, status: false, shouldAlarm: false, alarmAt: nil, createdAt: nil, shouldRepeat: false, priority: 0, listId: -1, memo: nil)
+        } else {
+            isCreate = false
+        }
+    }
+    
     var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] {
         return [
             // section 0 - Intro
@@ -65,4 +81,5 @@ struct JJPDetailsTableViewModel: JJTableViewConfigureProtocol {
         
         return configure[section].rowTypes.count
     }
+    
 }

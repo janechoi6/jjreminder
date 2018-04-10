@@ -48,10 +48,10 @@ class JJPMainViewController: UIViewController {
     
     func showDetails(task: Task?) {
         
-        let vc = JJPDetailsViewController()
-        vc.task = task
-        let navigationController = UINavigationController(rootViewController: vc)
-        present(navigationController, animated: true, completion: nil)
+//        let vc = JJPDetailsViewController()
+//        vc.task = task
+//        let navigationController = UINavigationController(rootViewController: vc)
+//        present(navigationController, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
@@ -64,7 +64,7 @@ class JJPMainViewController: UIViewController {
     */
     
     @IBAction func addTaskButtonTapped(_ sender: Any) {
-        let vc = JJPDetailsViewController()
+        let vc = JJPDetailsViewController.init(task: nil)
         let navigationController = UINavigationController(rootViewController: vc)
         present(navigationController, animated: true, completion: nil)
     }

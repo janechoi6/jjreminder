@@ -13,10 +13,16 @@ class JJPDetailsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     
     var tableViewMedel: JJPDetailsTableViewModel!
+    var task: Task!
     
     convenience init(task: Task?) {
         self.init()
         self.tableViewMedel = JJPDetailsTableViewModel.init(task: task)
+        self.task = tableViewMedel.task
+    }
+    
+    deinit {
+        print("JJDetailsVC is being deinitialized")
     }
     
     override func viewDidLoad() {
@@ -112,13 +118,12 @@ extension JJPDetailsViewController: UITableViewDataSource {
             
         } else if rowType == .IsAlarm {
             let cell = JJPDetailsSwitchCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsSwitchCell
-            cell.titleLabel.text = NSLocalizedString("details.title.usingAlarm", comment: "")
-            cell.onOffSwitchCompletion = { (isOn: Bool) -> Void in
-                if isOn {
-                    print("on")
-                } else {
-                    print("off")
-                }
+            cell.setTitle(NSLocalizedString("details.title.usingAlarm", comment: ""), isSwitchOn: self.task.shouldAlarm)
+            cell.onOffSwitchCompletion = { [weak self] (isOn: Bool) -> Void in
+                
+                self?.task.setAlaram(isOn)
+                
+                tableView.reloadSections(IndexSet(integer: indexPath.section), with: UITableViewRowAnimation.none)
             }
             return cell
             

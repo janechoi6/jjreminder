@@ -35,3 +35,16 @@ class Task {
         self.memo = memo
     }
 }
+
+extension Task {
+    func setAlaram(_ shouldAlarm: Bool) -> Void {
+        self.shouldAlarm = shouldAlarm
+        self.shouldRepeat = false
+        if shouldAlarm {
+            self.alarmAt = Date.init()
+        } else {
+            self.alarmAt = nil
+            
+        }
+    }
+}

@@ -27,9 +27,14 @@ class JJPDetailsSwitchCell: UITableViewCell {
     
     func initViews() {
         titleLabel.text = ""
-        onOffSwitch.setOn(false, animated: false)
+    }
+    
+    func setTitle(_ title: String, isSwitchOn: Bool) -> Void {
+        titleLabel.text = title
+         onOffSwitch.setOn(isSwitchOn, animated: true)
     }
 
+    //MARK:- Action
     @IBAction private func valueChangedOnOffSwitch(_ sender: Any) {
         onOffSwitchCompletion?(onOffSwitch.isOn)
     }

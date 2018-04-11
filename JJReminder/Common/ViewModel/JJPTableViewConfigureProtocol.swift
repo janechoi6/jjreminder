@@ -8,13 +8,14 @@
 
 import Foundation
 
-protocol JJTableViewConfigureProtocol {
-    var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] { get };
-    var numberOfSections: Int { get };
-    func numberOfRowsInSection(section: Int) -> Int;
+protocol JJPTableViewConfigureProtocol {
+    var configure: [[JJPTableViewRowProtocol]] { get }
 }
 
-protocol JJPTableViewSectionProtocol {
+protocol JJPTableviewDataSourceProtocol {
+    var numberOfSections: Int { get }
+    func numberOfRowsInSection(section: Int) -> Int
+    func rowType(indexPath: IndexPath) -> JJPTableViewRowProtocol
 }
 
 protocol JJPTableViewRowProtocol {

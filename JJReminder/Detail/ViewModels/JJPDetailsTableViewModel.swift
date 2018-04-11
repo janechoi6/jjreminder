@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum DetailsTableViewSection: JJPTableViewSectionProtocol {
-    case Intro
-    case Alarm
-    case Option
-    case Delete
-}
-
 enum DetailsTableViewRow : JJPTableViewRowProtocol {
     case Title
     case Description
@@ -27,59 +20,84 @@ enum DetailsTableViewRow : JJPTableViewRowProtocol {
     case Delete
 }
 
-struct JJPDetailsTableViewModel: JJTableViewConfigureProtocol {
+struct JJPDetailsTableViewModel {
     
     // 생성 or 수정
     var isCreate: Bool
-    var task: Task?
-    
-    init(preTask: Task?) {
-        task = preTask
-        
-        if self.task == nil {
-            isCreate = true
+    var task: Task!
+
+    init(task: Task?) {
+        if task == nil {
+            self.isCreate = true
             self.task = Task(taskID: -1, title: nil, status: false, shouldAlarm: false, alarmAt: nil, createdAt: nil, shouldRepeat: false, priority: 0, listId: -1, memo: nil)
         } else {
-            isCreate = false
+            self.isCreate = false
+            self.task = task!
         }
     }
-    
-    var configure: [(sectionType: JJPTableViewSectionProtocol, rowTypes: [JJPTableViewRowProtocol])] {
+}
+
+extension JJPDetailsTableViewModel: JJPTableViewConfigureProtocol {
+    var configure: [[JJPTableViewRowProtocol]] {
         return [
-            // section 0 - Intro
-            (DetailsTableViewSection.Intro, [
-                DetailsTableViewRow.Title,
-                DetailsTableViewRow.Description,
-                DetailsTableViewRow.Status
-                ]),
-            // section 1 - alaram
-            (DetailsTableViewSection.Alarm, [
-                DetailsTableViewRow.IsAlarm,
-                DetailsTableViewRow.Alarm,
-                DetailsTableViewRow.AlarmRepeat
-                ]),
-            // section 2 - option
-            (DetailsTableViewSection.Option, [
-                DetailsTableViewRow.Priority,
-                DetailsTableViewRow.List
-                ]),
-            // section 3 - delete
-            (DetailsTableViewSection.Delete, [
-                DetailsTableViewRow.Delete
-                ])
+            introRows(),
+            alaramRows(),
+            optionRows(),
+            deleteRows()
         ]
     }
     
+    func introRows() -> [JJPTableViewRowProtocol] {
+        var rows = [JJPTableViewRowProtocol]()
+        rows.append(DetailsTableViewRow.Title)
+        rows.append(DetailsTableViewRow.Description)
+        if !isCreate {
+            rows.append(DetailsTableViewRow.Status)
+        }
+        
+        return rows
+    }
+    
+    func alaramRows() -> [JJPTableViewRowProtocol] {
+        var rows = [JJPTableViewRowProtocol]()
+        rows.append(DetailsTableViewRow.IsAlarm)
+        if task.shouldAlarm {
+            rows.append(DetailsTableViewRow.Alarm)
+            rows.append(DetailsTableViewRow.AlarmRepeat)
+        }
+        
+        return rows
+    }
+    
+    func optionRows() -> [JJPTableViewRowProtocol] {
+        var rows = [JJPTableViewRowProtocol]()
+        rows.append(DetailsTableViewRow.Priority)
+        rows.append(DetailsTableViewRow.List)
+        
+        return rows
+    }
+    
+    func deleteRows() -> [JJPTableViewRowProtocol] {
+        var rows = [JJPTableViewRowProtocol]()
+        if !isCreate {
+            rows.append(DetailsTableViewRow.Delete)
+        }
+        
+        return rows
+    }
+}
+
+extension JJPDetailsTableViewModel: JJPTableviewDataSourceProtocol {
     var numberOfSections: Int {
         return configure.count
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-//        if tableViewMap[section].sectionType == .AlarmSection {
-//            //TODO: 알람 사용 유무
-//        }
-        
-        return configure[section].rowTypes.count
+        return configure[section].count
     }
     
+    func rowType(indexPath: IndexPath) -> JJPTableViewRowProtocol {
+        return configure[indexPath.section][indexPath.row]
+    }
 }
+

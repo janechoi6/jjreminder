@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,19 +19,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F2p-XD-pRF">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F2p-XD-pRF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="BHQ-zE-GIl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="F2p-XD-pRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0Un-dI-PBB"/>
-                    <constraint firstItem="F2p-XD-pRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1aR-Vv-EjT"/>
-                    <constraint firstAttribute="bottom" secondItem="F2p-XD-pRF" secondAttribute="bottom" id="8gR-nl-SO8"/>
-                    <constraint firstItem="F2p-XD-pRF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="f5R-EM-WpB"/>
-                    <constraint firstAttribute="trailing" secondItem="F2p-XD-pRF" secondAttribute="trailing" id="g4K-qY-QM4"/>
                     <constraint firstAttribute="trailing" secondItem="F2p-XD-pRF" secondAttribute="trailing" id="iQY-FX-ZHA"/>
                     <constraint firstAttribute="bottom" secondItem="F2p-XD-pRF" secondAttribute="bottom" id="kMy-pb-Ps3"/>
                     <constraint firstItem="F2p-XD-pRF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vTe-gJ-E18"/>
@@ -39,7 +38,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="titleTextView" destination="F2p-XD-pRF" id="Q9y-CT-9vW"/>
+                <outlet property="titleTextView" destination="F2p-XD-pRF" id="j2r-b3-4qS"/>
             </connections>
         </tableViewCell>
     </objects>

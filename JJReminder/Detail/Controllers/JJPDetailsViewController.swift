@@ -12,13 +12,15 @@ class JJPDetailsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableViewMedel: JJPDetailsTableViewModel!
-    var task: Task!
+    private var tableViewMedel: JJPDetailsTableViewModel!
+    private var task: Task!
+    private var isTableReloadIfNeeds: Bool!
     
     convenience init(task: Task?) {
         self.init()
         self.tableViewMedel = JJPDetailsTableViewModel.init(task: task)
         self.task = tableViewMedel.task
+        self.isTableReloadIfNeeds = false
     }
     
     deinit {
@@ -30,6 +32,12 @@ class JJPDetailsViewController: UIViewController{
 
         setupNavigationBar()
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if isTableReloadIfNeeds {
+            tableView.reloadData()
+        }
     }
 
     func setupNavigationBar() -> Void {
@@ -92,7 +100,7 @@ extension JJPDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let rowType = tableViewMedel.configure[indexPath.section][indexPath.row] as! DetailsTableViewRow
+        let rowType = tableViewMedel.configure[indexPath.section][indexPath.row] as! DetailsRow
         
         if rowType == .Title {
             let cell = JJPDetailsTitleCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsTitleCell
@@ -100,7 +108,8 @@ extension JJPDetailsViewController: UITableViewDataSource {
             return cell
             
         } else if rowType == .Description {
-            let cell = JJPDetailsDescriptionCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath)
+            let cell = JJPDetailsDescriptionCell.dequeueReusableCellToTableView(tableView: tableView, cellForRowAt: indexPath) as! JJPDetailsDescriptionCell
+//            cell.descriptionTextView.text = "test"
             return cell
             
         } else if rowType == .Status {
@@ -145,6 +154,7 @@ extension JJPDetailsViewController: UITableViewDataSource {
             let cell = UITableViewCell.systemDetailStyleCellToTableView(tableView: tableView, accessoryType: .disclosureIndicator)
             cell.textLabel?.text = NSLocalizedString("details.title.priority", comment: "")
             // data
+
             cell.detailTextLabel?.text = NSLocalizedString("details.priority.none", comment: "")
             
             return cell
@@ -175,16 +185,22 @@ extension JJPDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let rowType = tableViewMedel.rowType(indexPath: indexPath) as! DetailsTableViewRow
+        let rowType = tableViewMedel.rowType(indexPath: indexPath) as! DetailsRow
         
         if rowType == .Alarm {
             
         } else if rowType == .AlarmRepeat {
             
         } else if rowType == .Priority {
+            let selectionVC = JJPDetailsSelectionViewController.init(selectionType: .priority, selectedIndex: task.priority)
+            selectionVC.selectionCompletion = { [weak self] (selectedIndex: Int) -> Void  in
+                self?.tableViewMedel.task.priority = selectedIndex
+                self?.isTableReloadIfNeeds = true
+            }
             
+            navigationController?.pushViewController(selectionVC, animated: true)
         } else if rowType == .List {
-            
+
         } else if rowType == .Delete {
             let alertController = UIAlertController.init(title: nil, message: NSLocalizedString("details.alert.message.delete", comment: ""), preferredStyle: .alert)
             let noAction = UIAlertAction.init(title: NSLocalizedString("no", comment: ""), style: .cancel, handler:nil)

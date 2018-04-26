@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DetailsTableViewRow : JJPTableViewRowProtocol {
+enum DetailsRow : JJPTableViewRowProtocol {
     case Title
     case Description
     case Status
@@ -47,40 +47,44 @@ extension JJPDetailsTableViewModel: JJPTableViewConfigureProtocol {
         ]
     }
     
+    // 인드로 섹션 정보
     func introRows() -> [JJPTableViewRowProtocol] {
         var rows = [JJPTableViewRowProtocol]()
-        rows.append(DetailsTableViewRow.Title)
-        rows.append(DetailsTableViewRow.Description)
+        rows.append(DetailsRow.Title)
+        rows.append(DetailsRow.Description)
         if !isCreate {
-            rows.append(DetailsTableViewRow.Status)
+            rows.append(DetailsRow.Status)
         }
         
         return rows
     }
     
+    // 알람 섹션 정보
     func alaramRows() -> [JJPTableViewRowProtocol] {
         var rows = [JJPTableViewRowProtocol]()
-        rows.append(DetailsTableViewRow.IsAlarm)
+        rows.append(DetailsRow.IsAlarm)
         if task.shouldAlarm {
-            rows.append(DetailsTableViewRow.Alarm)
-            rows.append(DetailsTableViewRow.AlarmRepeat)
+            rows.append(DetailsRow.Alarm)
+            rows.append(DetailsRow.AlarmRepeat)
         }
         
         return rows
     }
     
+    // 옵션 섹션 정보
     func optionRows() -> [JJPTableViewRowProtocol] {
         var rows = [JJPTableViewRowProtocol]()
-        rows.append(DetailsTableViewRow.Priority)
-        rows.append(DetailsTableViewRow.List)
+        rows.append(DetailsRow.Priority)
+        rows.append(DetailsRow.List)
         
         return rows
     }
     
+    // 삭제 섹선 정
     func deleteRows() -> [JJPTableViewRowProtocol] {
         var rows = [JJPTableViewRowProtocol]()
         if !isCreate {
-            rows.append(DetailsTableViewRow.Delete)
+            rows.append(DetailsRow.Delete)
         }
         
         return rows

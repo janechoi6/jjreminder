@@ -37,6 +37,9 @@
 		B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E408EF204D732100C456A9 /* UITableViewCell+.swift */; };
 		E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */; };
 		E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */; };
+		E132F692208E264300EE4B8E /* JJPDetailsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132F690208E264300EE4B8E /* JJPDetailsSelectionViewController.swift */; };
+		E132F693208E264300EE4B8E /* JJPDetailsSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E132F691208E264300EE4B8E /* JJPDetailsSelectionViewController.xib */; };
+		E132F695208E28CE00EE4B8E /* JJPDetailsSelectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132F694208E28CE00EE4B8E /* JJPDetailsSelectionTableViewModel.swift */; };
 		E1BC3E8620444E5000519CAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1BC3E8820444E5000519CAF /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		B4E408EF204D732100C456A9 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsViewController.swift; sourceTree = "<group>"; };
 		E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsViewController.xib; sourceTree = "<group>"; };
+		E132F690208E264300EE4B8E /* JJPDetailsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsSelectionViewController.swift; sourceTree = "<group>"; };
+		E132F691208E264300EE4B8E /* JJPDetailsSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JJPDetailsSelectionViewController.xib; sourceTree = "<group>"; };
+		E132F694208E28CE00EE4B8E /* JJPDetailsSelectionTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPDetailsSelectionTableViewModel.swift; sourceTree = "<group>"; };
 		E1BC3E8720444E5000519CAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E1BC3E8920444E5E00519CAF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA7E0C7205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift */,
+				E132F694208E28CE00EE4B8E /* JJPDetailsSelectionTableViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -267,6 +274,8 @@
 			children = (
 				E12EEAEB2039BE06007D19B5 /* JJPDetailsViewController.swift */,
 				E12EEAEC2039BE06007D19B5 /* JJPDetailsViewController.xib */,
+				E132F690208E264300EE4B8E /* JJPDetailsSelectionViewController.swift */,
+				E132F691208E264300EE4B8E /* JJPDetailsSelectionViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +349,7 @@
 				B4E408EC204D6E4100C456A9 /* JJPDetailsDescriptionCell.xib in Resources */,
 				E12EEAEE2039BE06007D19B5 /* JJPDetailsViewController.xib in Resources */,
 				4A900DD32037276E00AF55D8 /* Assets.xcassets in Resources */,
+				E132F693208E264300EE4B8E /* JJPDetailsSelectionViewController.xib in Resources */,
 				2F966432205276740043B001 /* JJPDetailsSwitchCell.xib in Resources */,
 				4A900DCE2037276E00AF55D8 /* Main.storyboard in Resources */,
 				4A7A29972051052E00F226A1 /* tasks.tsv in Resources */,
@@ -359,11 +369,13 @@
 				B4E408F0204D732100C456A9 /* UITableViewCell+.swift in Sources */,
 				E12EEAED2039BE06007D19B5 /* JJPDetailsViewController.swift in Sources */,
 				2F9664372052787C0043B001 /* NSObject+.swift in Sources */,
+				E132F695208E28CE00EE4B8E /* JJPDetailsSelectionTableViewModel.swift in Sources */,
 				4A8F083A204E4D2C0056E832 /* Task.swift in Sources */,
 				2FA7E0C8205B6FA100DB0FAC /* JJPDetailsTableViewModel.swift in Sources */,
 				4A27035D20458B530081A398 /* JJPItemCollectionViewCell.swift in Sources */,
 				4A900DC92037276E00AF55D8 /* AppDelegate.swift in Sources */,
 				4A8F0835204E4CFF0056E832 /* DBManager.swift in Sources */,
+				E132F692208E264300EE4B8E /* JJPDetailsSelectionViewController.swift in Sources */,
 				4A8F0859204E4E170056E832 /* FMDatabaseAdditions.m in Sources */,
 				4A8F085B204E4E170056E832 /* FMResultSet.m in Sources */,
 				2FA7E0CD205B704E00DB0FAC /* JJPTableViewConfigureProtocol.swift in Sources */,
